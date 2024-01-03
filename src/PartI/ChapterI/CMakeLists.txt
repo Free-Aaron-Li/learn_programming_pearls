@@ -14,6 +14,8 @@ set_directory_properties(${PROJECT_SOURCE_DIR}/assert)
 
 set(SOURCES
         src/main.cpp
+        src/imp/Random.cpp
+        src/imp/Sort.cpp
 )
 
 #------------------------------------

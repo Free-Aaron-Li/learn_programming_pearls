@@ -7,9 +7,11 @@
 // This file is part of 'PartI' project.
 // This program is called:'main'.
 // If there are no special instructions, this file is used as an exercise and test file.
-#include <iostream>
+#include "Random.hpp"
 
 int
 main() {
-    std::cout << "hello";
+    Random random;
+    random.number(200, 1000000, 9999999);
+    random.printNumber();
 }
