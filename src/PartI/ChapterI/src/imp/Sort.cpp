@@ -8,3 +8,6 @@
 // This program is called:'Sort'.
 // Code implementation
 #include "Sort.hpp"
+
+void
+Sort::bitSort(const std::shared_ptr<std::vector<long>>& obj_numbers, const long max_number) {}

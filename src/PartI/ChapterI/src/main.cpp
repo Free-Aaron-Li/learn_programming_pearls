@@ -12,6 +12,6 @@
 int
 main() {
     Random random;
-    random.number(200, 1000000, 9999999);
+    random.number(10000000, 10000000, 99999999);
     random.printNumber();
 }

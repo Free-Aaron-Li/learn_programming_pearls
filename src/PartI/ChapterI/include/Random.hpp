@@ -6,8 +6,6 @@
 
 // This file is part of 'ChapterI' project.
 // This program is called:'Random'.
-
-
 #ifndef CHAPTERI_RANDOM_HPP
 #define CHAPTERI_RANDOM_HPP
 
@@ -52,6 +50,10 @@ class Random {
      * @return outfile
      */
     void printNumber();
+
+    std::shared_ptr<std::vector<long>> getNumbers() const;
+
+    long getMaxNum() const;
 
  private:
     /// @param _numbers A container for storing numbers

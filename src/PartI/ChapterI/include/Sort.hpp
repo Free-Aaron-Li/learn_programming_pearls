@@ -14,13 +14,20 @@
  * Sorting algorithm
  */
 
+#include "Random.hpp"
 #include <iostream>
-#include <vector>
 #include <memory>
 
+#include <vector>
+#include <bitset>
+
 class Sort {
+    friend class Random;
+
  public:
-    void bitSort();
+    Sort() : _numbers(std::make_shared<std::vector<long>>()) {}
+
+    void bitSort(const std::shared_ptr<std::vector<long>>& obj_numbers, const long max_number);
 
  private:
     std::shared_ptr<std::vector<long>> _numbers;

@@ -16,9 +16,10 @@ Random::number(const long quantity, const long min_num, const long max_num) {
     _max_num      = max_num;
 
     if (_num_quantity > _max_num) {
-        std::cerr << "The maximum random number is less than the number of target sequences!";
+        std::cerr << "The maximum random number is less than the number of target sequences!\n";
         return;
     }
+
     std::random_device                  device;
     std::default_random_engine          engine(device());
     std::uniform_int_distribution<long> distribution(_min_num, _max_num);
@@ -28,10 +29,15 @@ Random::number(const long quantity, const long min_num, const long max_num) {
 
 void
 Random::printNumber() {
+    if (_numbers->empty()) {
+        std::cerr << "The number is null!\n";
+        return;
+    }
+
     std::string   file_name;
     std::ofstream outfile;
 
-    std::cout << "print outfile name:";
+    std::cout << "Print outfile name:";
     std::cin >> file_name;
 
     outfile.open(file_name);
@@ -39,4 +45,14 @@ Random::printNumber() {
     for (const auto& val : *_numbers)
         outfile << val << "\n";
     outfile.close();
+}
+
+std::shared_ptr<std::vector<long>>
+Random::getNumbers() const {
+    return _numbers;
+}
+
+long
+Random::getMaxNum() const {
+    return _max_num;
 }
